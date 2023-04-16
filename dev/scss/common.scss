@@ -1,0 +1,28 @@
+// Common styles of the project:
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: rem(16);
+    line-height: 1.5;
+    font-weight: 400;
+    font-family: Arial, Helvetica, sans-serif;
+    color: $black;
+    text-rendering: optimizeLegibility;
+}

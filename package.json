@@ -1,0 +1,22 @@
+{
+    "name": "userconcept-forms",
+    "version": "1.0.0",
+    "description": "Userconcept form inline validation",
+    "main": "index.js",
+    "author": "userconcept",
+    "license": "ISC",
+    "devDependencies": {
+        "autoprefixer": "^10.1.0",
+        "browser-sync": "^2.26.13",
+        "cssnano": "^4.1.10",
+        "gulp": "^4.0.2",
+        "gulp-postcss": "^9.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "^5.1.0",
+        "gulp-sourcemaps": "^3.0.0",
+        "gulp-svg-sprite": "^1.5.0",
+        "postcss": "^8.2.1",
+        "postcss-import": "^14.0.0",
+        "sass": "^1.56.2"
+    }
+}

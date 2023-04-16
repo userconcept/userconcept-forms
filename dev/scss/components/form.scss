@@ -1,0 +1,15 @@
+.form {
+
+    &__form-item {
+
+        & + .form__form-item {
+            margin-top: rem(24);
+        }
+    }
+
+    &__button {
+        width: 100%;
+        max-width: rem(190);
+        margin-top: rem(36);
+    }
+}

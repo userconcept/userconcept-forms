@@ -1,0 +1,13 @@
+.textarea {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: rem(11) rem(14);
+    border: rem(1) solid $color_black;
+    outline: none;
+    background-color: transparent;
+    color: $color_black;
+    font-size: rem(16);
+    line-height: 1.5;
+    resize: none;
+}

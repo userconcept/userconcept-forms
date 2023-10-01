@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="theme-color" content="#000000">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="description" content="Forms inline validation (Constraint Validation API, JavaScript).">
+    <meta name="keywords" content="forms, validation, constraint validation">
+    <title>Userconcept Forms - Forms inline validation</title>
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head>
+<body>
+    <main>
+        <!-- CALLBACK - START -->
+        <section class="callback">
+            <h2 class="title callback__title">Callback</h2>
+            <form class="form callback__form" method="POST" action="/api/callback/" autocomplete="off">
+                <div class="form-item form__form-item">
+                    <label class="label form-item__label" for="f-callback-name">Name</label>
+                    <input class="input form-item__input" type="text" id="f-callback-name" name="f-callback-name" required>
+                </div>
+                <div class="form-item form__form-item">
+                    <label class="label form-item__label" for="f-callback-tel">Phone</label>
+                    <input class="input form-item__input" type="tel" id="f-callback-tel" name="f-callback-tel" required>
+                </div>
+                <div class="form-item form__form-item">
+                    <label class="label form-item__label" for="f-callback-email">E-mail</label>
+                    <input class="input form-item__input" type="email" id="f-callback-email" name="f-callback-email" required>
+                </div>
+                <div class="form-checkbox form__form-checkbox">
+                    <input class="form-checkbox__input" type="checkbox" id="f-callback-checkbox" name="f-callback-checkbox" required>
+                    <label class="form-checkbox__label" for="f-callback-checkbox">Confirmation text, needed for form submit.</label>
+                </div>
+                <button class="button form__button">Send</button>
+            </form>
+        </section>
+        <!-- CALLBACK - END -->
+        <!-- CONTACT - START -->
+        <section class="contact">
+            <h2 class="title contact__title">Contact</h2>
+            <form class="form contact__form" method="POST" action="/api/contact/" autocomplete="off">
+                <div class="form-item form__form-item">
+                    <label class="label form-item__label" for="f-contact-name">Name</label>
+                    <input class="input form-item__input" type="text" id="f-contact-name" name="f-contact-name" required>
+                </div>
+                <div class="form-item form__form-item">
+                    <label class="label form-item__label" for="f-contact-tel">Phone</label>
+                    <input class="input form-item__input" type="tel" id="f-contact-tel" name="f-contact-tel" required>
+                </div>
+                <div class="form-item form__form-item">
+                    <label class="label form-item__label" for="f-contact-email">E-mail</label>
+                    <input class="input form-item__input" type="email" id="f-contact-email" name="f-contact-email" required>
+                </div>
+                <div class="form-item form__form-item">
+                    <label class="label form-item__label" for="f-contact-message">Message</label>
+                    <textarea class="textarea form-item__textarea" id="f-contact-message" name="f-contact-message" required></textarea>
+                </div>
+                <div class="form-checkbox form__form-checkbox">
+                    <input class="form-checkbox__input" type="checkbox" id="f-contact-checkbox" name="f-contact-checkbox" required>
+                    <label class="form-checkbox__label" for="f-contact-checkbox">Confirmation text, needed for form submit.</label>
+                </div>
+                <button class="button form__button">Send</button>
+            </form>
+        </section>
+        <!-- CONTACT - END -->
+    </main>
+    <script src="js/main.js"></script>
+</body>
+</html>

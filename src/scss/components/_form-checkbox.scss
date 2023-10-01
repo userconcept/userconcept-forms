@@ -1,0 +1,8 @@
+.form-checkbox {
+    padding: rem(6) 0;
+
+    &__error {
+        padding-top: rem(6);
+        color: $color_error;
+    }
+}

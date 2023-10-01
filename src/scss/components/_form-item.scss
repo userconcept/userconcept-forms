@@ -1,0 +1,18 @@
+.form-item {
+
+    &__input,
+    &__textarea {
+        display: block;
+        width: 100%;
+        max-width: rem(312);
+    }
+
+    &__textarea {
+        height: rem(192);
+    }
+
+    &__error {
+        padding: rem(6) 0;
+        color: $color_error;
+    }
+}

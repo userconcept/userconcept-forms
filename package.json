@@ -1,0 +1,25 @@
+{
+  "name": "userconcept-forms",
+  "version": "0.1.0",
+  "description": "Forms inline validation",
+  "author": "userconcept <userconcept@yandex.ru> (https://userconcept.ru)",
+  "homepage": "https://userconcept.github.io/userconcept-forms",
+  "main": "src/js/main.js",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build:sass": "sass src/scss:src/css",
+    "build:postcss": "postcss src/css/main.css -u autoprefixer -r",
+    "build": "npm run build:sass && npm run build:postcss",
+    "watch:sass": "sass -w src/scss:src/css",
+    "watch:bs": "browser-sync start --config bs-config.js",
+    "dev": "npm run watch:bs & npm run watch:sass"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.16",
+    "browser-sync": "^2.29.3",
+    "postcss": "^8.4.31",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.68.0"
+  }
+}

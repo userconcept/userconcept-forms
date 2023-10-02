@@ -1,0 +1,10 @@
+.icon {
+    display: inline-block;
+    vertical-align: top;
+    fill: currentColor;
+
+    &_check {
+        width: rem(24);
+        height: rem(24);
+    }
+}

@@ -3,10 +3,14 @@
     vertical-align: top;
     margin: 0;
     padding: rem(11) rem(14);
-    border: rem(1) solid $color_black;
+    border: rem(1) solid $color_white;
     outline: none;
     background-color: transparent;
-    color: $color_black;
+    color: $color_white;
     font-size: rem(16);
     line-height: 1.5;
+
+    &::placeholder {
+        color: transparent;
+    }
 }

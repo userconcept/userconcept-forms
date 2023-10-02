@@ -2,14 +2,61 @@
     display: inline-block;
     vertical-align: top;
     margin: 0;
-    padding: rem(11) rem(14);
-    border: rem(1) solid $color_black;
+    padding: rem(12) rem(15);
+    border: none;
     outline: none;
     background-color: transparent;
-    color: $color_black;
+    color: $color_white;
     font-size: rem(16);
     line-height: 1.5;
+    font-weight: 300;
     text-align: center;
+    transition: color $trans_sm;
+    position: relative;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        transition: box-shadow $trans_sm;
+    }
+
+    &::before {
+        border-top-left-radius: rem(8);
+        border-bottom-left-radius: rem(8);
+        box-shadow: rem(6) rem(6) rem(6) rem(0) $color_gray_5x_dark_shadow_dark, rem(-6) rem(-6) rem(6) rem(0) $color_gray_5x_shadow_light;
+        clip-path: polygon(rem(-12) rem(-12), 49.9% rem(-12), 49.9% calc(100% + rem(12)), rem(-12) calc(100% + rem(12)));
+    }
+
+    &::after {
+        border-top-right-radius: rem(8);
+        border-bottom-right-radius: rem(8);
+        box-shadow: rem(-6) rem(-6) rem(6) rem(0) $color_gray_3x_shadow_light, rem(6) rem(6) rem(6) rem(0) $color_gray_3x_dark_shadow_dark;
+        clip-path: polygon(49.9% rem(-12), calc(100% + rem(12)) rem(-12), calc(100% + rem(12)) calc(100% + rem(12)), 49.9% calc(100% + rem(12)));
+    }
+
+    &:hover,
+    &:focus {
+        color: $color_cyan;
+
+        &::before {
+            box-shadow: rem(3) rem(3) rem(6) rem(0) $color_gray_5x_dark_shadow_dark, rem(-3) rem(-3) rem(6) rem(0) $color_gray_5x_shadow_light;
+        }
+
+        &::after {
+            box-shadow: rem(-3) rem(-3) rem(6) rem(0) $color_gray_3x_shadow_light, rem(3) rem(3) rem(6) rem(0) $color_gray_3x_dark_shadow_dark;
+        }
+    }
+
+    &__text {
+        display: block;
+    }
 }
 
 a.button {

@@ -2,12 +2,44 @@
 
 // Fonts:
 
-$font_normal: Arial, Helvetica, sans-serif;
-$font_bold: Arial, Helvetica, sans-serif;
+$font_normal: "Roboto Mono", "Courier New", Courier, monospace;
+$font_bold: "ScienceGothic", "Courier New", Courier, monospace;
 
 // Colors:
 
 $color_black: black;
+$color_white: white;
+$color_cyan: #80ffff;
 $color_red: red;
 $color_error: $color_red;
-$color_selection: blue;
+$color_selection: $color_cyan;
+
+// Colors Space Gray:
+
+$color_gray_1x: #c0c5ce;
+$color_gray_2x: #a7adba;
+$color_gray_3x: #65737e;
+$color_gray_4x: #4f5b66;
+$color_gray_5x: #343d46;
+
+$color_gray_3x_dark: #5a6771;
+$color_gray_5x_dark: #242a31;
+
+$color_gray_3x_shadow_light: #8598a6;
+$color_gray_3x_shadow_dark: #454e56;
+$color_gray_3x_dark_shadow_light: #778895;
+$color_gray_3x_dark_shadow_dark: #3d464d;
+
+$color_gray_5x_shadow_light: #45515c;
+$color_gray_5x_shadow_dark: #232930;
+$color_gray_5x_dark_shadow_light: #303741;
+$color_gray_5x_dark_shadow_dark: #181d21;
+
+// Gradients Space Gray:
+
+$gradient_gray_right: linear-gradient(to right, $color_gray_5x 0%, $color_gray_5x_dark 50%, $color_gray_3x 50%, $color_gray_3x_dark 100%);
+
+// Transitions:
+
+$trans_sm: .25s ease;
+$trans_none: 0s ease;

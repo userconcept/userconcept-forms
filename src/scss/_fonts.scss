@@ -1,0 +1,23 @@
+// Fonts:
+
+// Roboto:
+
+@font-face {
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("../fonts/RobotoMono-Light.woff2") format("woff2"),
+        url("../fonts/RobotoMono-Light.woff") format("woff");
+}
+
+// Science Gothic:
+
+@font-face {
+    font-family: "ScienceGothic";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../fonts/ScienceGothic-Medium.woff2") format("woff2"),
+        url("../fonts/ScienceGothic-Medium.woff") format("woff");
+}

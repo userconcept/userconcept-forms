@@ -2,15 +2,14 @@
 
     &__form-item {
 
-        & + .form__form-item,
         & + .form__form-checkbox {
             margin-top: rem(24);
         }
     }
 
     &__button {
+        display: block;
         width: 100%;
-        max-width: rem(190);
         margin-top: rem(24);
     }
 }

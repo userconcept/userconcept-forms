@@ -6,3 +6,17 @@
     $strip-unit: calc($num / ($num * 0 + 1));
     @return calc($strip-unit / 16 * 1rem);
 }
+
+// Media:
+
+@mixin screen_450_min_width {
+    @media (min-width: 450px) {
+        @content;
+    }
+}
+
+@mixin screen_2000_min_width {
+    @media (min-width: 2000px) {
+        @content;
+    }
+}

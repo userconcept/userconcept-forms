@@ -1,7 +1,7 @@
 {
     "name": "userconcept-forms",
     "short_name": "userconcept-forms",
-    "description": "Forms inline validation (Constraint Validation API, JavaScript).",
+    "description": "Forms inline validation in neumorphism style (Constraint Validation API, JavaScript).",
     "display": "minimal-ui",
     "start_url": "/",
     "id": "/",

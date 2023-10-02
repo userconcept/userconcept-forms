@@ -170,6 +170,22 @@ template {
     display: none
 }
 
+@font-face {
+    font-family: "Roboto Mono";
+    font-style: normal;
+    font-weight: 300;
+    font-display: swap;
+    src: url("../fonts/RobotoMono-Light.woff2") format("woff2"), url("../fonts/RobotoMono-Light.woff") format("woff")
+}
+
+@font-face {
+    font-family: "ScienceGothic";
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../fonts/ScienceGothic-Medium.woff2") format("woff2"), url("../fonts/ScienceGothic-Medium.woff") format("woff")
+}
+
 *,
 *::before,
 *::after {
@@ -177,11 +193,11 @@ template {
 }
 
 ::-moz-selection {
-    background-color: blue
+    background-color: #80ffff
 }
 
 ::selection {
-    background-color: blue
+    background-color: #80ffff
 }
 
 html,
@@ -191,9 +207,22 @@ body {
 
 html {
     font-size: 100%;
+    font-size: 4.4444444444vw;
     -webkit-text-size-adjust: none;
     -moz-text-size-adjust: none;
     text-size-adjust: none
+}
+
+@media (min-width: 450px) {
+    html {
+        font-size: 125%
+    }
+}
+
+@media (min-width: 2000px) {
+    html {
+        font-size: 1vw
+    }
 }
 
 body {
@@ -201,37 +230,107 @@ body {
     padding: 0;
     font-size: 1rem;
     line-height: 1.5;
-    font-weight: 400;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #000;
-    text-rendering: optimizeLegibility
+    font-weight: 300;
+    font-family: "Roboto Mono", "Courier New", Courier, monospace;
+    color: #fff;
+    text-rendering: optimizeLegibility;
+    background-image: linear-gradient(to right, #343d46 0%, #242a31 50%, #65737e 50%, #5a6771 100%)
+}
+
+.icon {
+    display: inline-block;
+    vertical-align: top;
+    fill: currentColor
+}
+
+.icon_check {
+    width: 1.5rem;
+    height: 1.5rem
 }
 
 .title {
     margin: 0;
     font-size: 2rem;
     line-height: 1.5;
-    font-weight: 700;
-    font-family: Arial, Helvetica, sans-serif
-}
-
-.button,
-.input,
-.textarea {
-    display: inline-block;
-    vertical-align: top;
-    margin: 0;
-    padding: .6875rem .875rem;
-    border: .0625rem solid #000;
-    outline: none;
-    background-color: transparent;
-    color: #000;
-    font-size: 1rem;
-    line-height: 1.5
+    font-weight: 500;
+    font-family: "ScienceGothic", "Courier New", Courier, monospace
 }
 
 .button {
-    text-align: center
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: .75rem .9375rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 300;
+    text-align: center;
+    transition: color .25s ease;
+    position: relative;
+    cursor: pointer
+}
+
+.button::before,
+.button::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: box-shadow .25s ease
+}
+
+.button::before {
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    box-shadow: .375rem .375rem .375rem 0rem #181d21, -.375rem -.375rem .375rem 0rem #45515c;
+    -webkit-clip-path: polygon(-.75rem -.75rem, 49.9% -.75rem, 49.9% calc(100% + .75rem), -.75rem calc(100% + .75rem));
+    clip-path: polygon(-.75rem -.75rem, 49.9% -.75rem, 49.9% calc(100% + .75rem), -.75rem calc(100% + .75rem))
+}
+
+.button::after {
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    box-shadow: -.375rem -.375rem .375rem 0rem #8598a6, .375rem .375rem .375rem 0rem #3d464d;
+    -webkit-clip-path: polygon(49.9% -.75rem, calc(100% + .75rem) -.75rem, calc(100% + .75rem) calc(100% + .75rem), 49.9% calc(100% + .75rem));
+    clip-path: polygon(49.9% -.75rem, calc(100% + .75rem) -.75rem, calc(100% + .75rem) calc(100% + .75rem), 49.9% calc(100% + .75rem))
+}
+
+.button:hover,
+.button:focus,
+.form-item__input:hover,
+.form-item__input:focus,
+.form-item__textarea:hover,
+.form-item__textarea:focus,
+.form-item__input:hover ~ .form-item__label .label__text,
+.form-item__input:focus ~ .form-item__label .label__text,
+.form-item__textarea:hover ~ .form-item__label .label__text,
+.form-item__textarea:focus ~ .form-item__label .label__text,
+.form-checkbox__input:focus ~ .form-checkbox__label,
+.form-checkbox__label:hover {
+    color: #80ffff
+}
+
+.button:hover::before,
+.button:focus::before,
+.form-checkbox__input:focus ~ .form-checkbox__label::before,
+.form-checkbox__label:hover::before {
+    box-shadow: .1875rem .1875rem .375rem 0rem #181d21, -.1875rem -.1875rem .375rem 0rem #45515c
+}
+
+.button:hover::after,
+.button:focus::after {
+    box-shadow: -.1875rem -.1875rem .375rem 0rem #8598a6, .1875rem .1875rem .375rem 0rem #3d464d
+}
+
+.button__text {
+    display: block
 }
 
 a.button {
@@ -241,51 +340,209 @@ a.button {
 .label {
     display: inline-block;
     vertical-align: top;
-    padding: .375rem 0;
     font-size: 1rem;
     line-height: 1.5
+}
+
+.input,
+.textarea {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0;
+    padding: .6875rem .875rem;
+    border: .0625rem solid #fff;
+    outline: none;
+    background-color: transparent;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.5
+}
+
+.input::-moz-placeholder {
+    color: transparent
+}
+
+.input::placeholder {
+    color: transparent
 }
 
 .textarea {
     resize: none
 }
 
+.textarea::-moz-placeholder {
+    color: transparent
+}
+
+.textarea::placeholder {
+    color: transparent
+}
+
+.form-item {
+    padding-top: 1.5rem;
+    position: relative
+}
+
 .form-item__input,
 .form-item__textarea {
     display: block;
     width: 100%;
-    max-width: 19.5rem
+    padding: .75rem .9375rem;
+    border: none;
+    transition: color .25s ease;
+    position: relative;
+    z-index: 1
 }
 
-.form-item__textarea {
+.form-item__input:hover ~ .form-item__label::before,
+.form-item__input:focus ~ .form-item__label::before,
+.form-item__textarea:hover ~ .form-item__label::before,
+.form-item__textarea:focus ~ .form-item__label::before {
+    box-shadow: inset .5625rem 0 .375rem -.375rem #232930, inset 0 .5625rem .375rem -.375rem #181d21, inset 0 -.5625rem .375rem -.375rem #45515c
+}
+
+.form-item__input:hover ~ .form-item__label::after,
+.form-item__input:focus ~ .form-item__label::after,
+.form-item__textarea:hover ~ .form-item__label::after,
+.form-item__textarea:focus ~ .form-item__label::after {
+    box-shadow: inset 0 .5625rem .375rem -.375rem #454e56, inset -.5625rem 0 .375rem -.375rem #778895, inset 0 -.5625rem .375rem -.375rem #8598a6
+}
+
+.form-item__input:not(:-moz-placeholder-shown) ~ .form-item__label .label__text,
+.form-item__textarea:not(:-moz-placeholder-shown) ~ .form-item__label .label__text {
+    transform: translateY(-2.25rem)
+}
+
+.form-item__input:focus ~ .form-item__label .label__text,
+.form-item__input:not(:placeholder-shown) ~ .form-item__label .label__text,
+.form-item__textarea:focus ~ .form-item__label .label__text,
+.form-item__textarea:not(:placeholder-shown) ~ .form-item__label .label__text {
+    transform: translateY(-2.25rem)
+}
+
+.form-item__input ~ .form-item__label {
+    height: 3rem
+}
+
+.form-item__textarea,
+.form-item__textarea ~ .form-item__label {
     height: 12rem
 }
 
+.form-item__label {
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    right: 0
+}
+
+.form-item__label::before,
+.form-item__label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    transition: box-shadow .25s ease
+}
+
+.form-item__label::before {
+    left: 0;
+    border-top-left-radius: .5rem;
+    border-bottom-left-radius: .5rem;
+    box-shadow: inset .75rem 0 .375rem -.375rem #232930, inset 0 .75rem .375rem -.375rem #181d21, inset 0 -.75rem .375rem -.375rem #45515c;
+    width: 49.9%
+}
+
+.form-item__label::after {
+    right: 0;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    box-shadow: inset 0 .75rem .375rem -.375rem #454e56, inset -.75rem 0 .375rem -.375rem #778895, inset 0 -.75rem .375rem -.375rem #8598a6;
+    width: 50.1%
+}
+
+.form-item__label .label__text {
+    display: block;
+    position: absolute;
+    top: .75rem;
+    left: .9375rem;
+    transition: color .25s ease, transform .25s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
 .form-item__error {
-    padding: .375rem 0;
     color: red
 }
 
 .form-checkbox {
-    padding: .375rem 0
+    position: relative
 }
 
-.form-checkbox__error {
-    padding-top: .375rem;
-    color: red
+.form-checkbox__input {
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%)
 }
 
-.form__form-item+.form__form-item,
-.form__form-item+.form__form-checkbox,
-.callback__form,
-.contact__form {
+.form-checkbox__input:checked ~ .form-checkbox__label .form-checkbox__icon {
+    opacity: 1
+}
+
+.form-checkbox__label {
+    padding-top: 1rem;
+    text-indent: 3rem;
+    transition: color .25s ease;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none
+}
+
+.form-checkbox__label::before,
+.form-checkbox__icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2rem;
+    height: 2rem
+}
+
+.form-checkbox__label::before {
+    content: ""
+}
+
+.form-checkbox__label::before {
+    border-radius: .5rem;
+    box-shadow: .375rem .375rem .375rem 0rem #181d21, -.375rem -.375rem .375rem 0rem #45515c;
+    transition: box-shadow .25s ease
+}
+
+.form-checkbox__icon {
+    opacity: 0;
+    transition: opacity .25s ease
+}
+
+.form__form-item + .form__form-checkbox {
     margin-top: 1.5rem
 }
 
 .form__button {
+    display: block;
     width: 100%;
-    max-width: 11.875rem;
     margin-top: 1.5rem
+}
+
+.callback,
+.contact {
+    max-width: 22.5rem;
+    margin: 0 auto
 }
 
 .callback {

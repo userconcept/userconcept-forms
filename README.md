@@ -1,6 +1,6 @@
 # userconcept-forms
 
-Forms inline validation (Constraint Validation API, JavaScript).
+Forms inline validation in neumorphism style (Constraint Validation API, JavaScript).
 
 ## About project
 
